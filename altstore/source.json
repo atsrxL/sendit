@@ -1,0 +1,42 @@
+{
+  "name": "SendIt",
+  "identifier": "com.atsrxl.sendit.source",
+  "subtitle": "分享即上传到你的 NAS",
+  "description": "SendIt 的 AltStore / SideStore 源。",
+  "iconURL": "https://raw.githubusercontent.com/atsrxl/sendit/main/altstore/icon.png",
+  "website": "https://github.com/atsrxl/sendit",
+  "tintColor": "#3A6FF7",
+  "apps": [
+    {
+      "name": "SendIt",
+      "bundleIdentifier": "com.atsrxl.sendit",
+      "developerName": "atsrxl",
+      "subtitle": "通过分享菜单把文件发送到 NAS（SMB / WebDAV）",
+      "localizedDescription": "在任意 App 中点「分享 → 发送到 NAS」，即可把照片、视频、文件、链接或文字直接上传到你的 NAS。\n\n• 支持 SMB 和 WebDAV\n• 每个服务器可以配置多个目的目录，分享时一键选择\n• 目录不存在时自动创建，重名文件自动加序号\n• 支持 iPhone 和 iPad",
+      "iconURL": "https://raw.githubusercontent.com/atsrxl/sendit/main/altstore/icon.png",
+      "tintColor": "#3A6FF7",
+      "category": "utilities",
+      "screenshots": [],
+      "versions": [
+        {
+          "version": "1.0.0",
+          "buildVersion": "1",
+          "date": "2026-11-04",
+          "localizedDescription": "首个版本：分享扩展支持 SMB / WebDAV，多目的目录。",
+          "downloadURL": "https://github.com/atsrxl/sendit/releases/download/v1.0.0/SendIt.ipa",
+          "size": 845585,
+          "minOSVersion": "16.0"
+        }
+      ],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups"
+        ],
+        "privacy": {
+          "NSLocalNetworkUsageDescription": "SendIt 需要访问局域网以连接你的 NAS。"
+        }
+      }
+    }
+  ],
+  "news": []
+}

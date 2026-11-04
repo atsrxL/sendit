@@ -1,0 +1,80 @@
+name: SendIt
+options:
+  bundleIdPrefix: com.atsrxl
+  deploymentTarget:
+    iOS: "16.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+    TARGETED_DEVICE_FAMILY: "1,2"
+    DEVELOPMENT_TEAM: ""
+    CODE_SIGN_STYLE: Automatic
+packages:
+  AMSMB2:
+    url: https://github.com/amosavian/AMSMB2
+    exactVersion: 4.0.3
+targets:
+  SendIt:
+    type: application
+    platform: iOS
+    sources:
+      - App
+      - Shared
+    dependencies:
+      - package: AMSMB2
+        embed: true
+      - target: SendItShare
+    entitlements:
+      path: App/SendIt.entitlements
+      properties:
+        com.apple.security.application-groups: [group.com.atsrxl.sendit]
+    info:
+      path: App/Info.plist
+      properties:
+        CFBundleDisplayName: SendIt
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        SendItAppGroup: group.com.atsrxl.sendit
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight, UIInterfaceOrientationPortraitUpsideDown]
+        UIApplicationSupportsIndirectInputEvents: true
+        NSAppTransportSecurity: {NSAllowsArbitraryLoads: true, NSAllowsLocalNetworking: true}
+        NSLocalNetworkUsageDescription: SendIt 需要访问局域网以连接你的 NAS。
+        LSSupportsOpeningDocumentsInPlace: false
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.atsrxl.sendit
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+  SendItShare:
+    type: app-extension
+    platform: iOS
+    sources:
+      - ShareExtension
+      - Shared
+    dependencies:
+      - package: AMSMB2
+        embed: false
+    entitlements:
+      path: ShareExtension/SendItShare.entitlements
+      properties:
+        com.apple.security.application-groups: [group.com.atsrxl.sendit]
+    info:
+      path: ShareExtension/Info.plist
+      properties:
+        CFBundleDisplayName: 发送到 NAS
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        SendItAppGroup: group.com.atsrxl.sendit
+        NSAppTransportSecurity: {NSAllowsArbitraryLoads: true, NSAllowsLocalNetworking: true}
+        NSLocalNetworkUsageDescription: SendIt 需要访问局域网以连接你的 NAS。
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.share-services
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).ShareViewController
+          NSExtensionAttributes:
+            NSExtensionActivationRule: TRUEPREDICATE
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.atsrxl.sendit.share
