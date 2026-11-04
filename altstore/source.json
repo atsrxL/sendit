@@ -19,6 +19,15 @@
       "screenshots": [],
       "versions": [
         {
+          "version": "1.0.1",
+          "buildVersion": "2",
+          "date": "2026-11-04",
+          "localizedDescription": "更换应用图标。",
+          "downloadURL": "https://github.com/atsrxL/sendit/releases/download/v1.0.1/SendIt.ipa",
+          "size": 4315155,
+          "minOSVersion": "16.0"
+        },
+        {
           "version": "1.0.0",
           "buildVersion": "1",
           "date": "2026-11-04",
