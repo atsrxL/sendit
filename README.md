@@ -59,7 +59,7 @@ App/             Main app: server and folder settings, upload from Files
 ShareExtension/  Share extension entry point and share-item parsing
 Shared/          Models, config storage (App Group), WebDAV/SMB clients, upload UI
 altstore/        AltStore source and icon
-scripts/         IPA packaging, source updater, icon generator
+scripts/         IPA packaging, AltStore source updater
 ```
 
 ## Notes
