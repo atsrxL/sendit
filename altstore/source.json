@@ -23,8 +23,8 @@
           "buildVersion": "1",
           "date": "2026-11-04",
           "localizedDescription": "首个版本：分享扩展支持 SMB / WebDAV，多目的目录。",
-          "downloadURL": "https://github.com/atsrxl/sendit/releases/download/v1.0.0/SendIt.ipa",
-          "size": 845585,
+          "downloadURL": "https://github.com/atsrxL/sendit/releases/download/v1.0.0/SendIt.ipa",
+          "size": 825142,
           "minOSVersion": "16.0"
         }
       ],
